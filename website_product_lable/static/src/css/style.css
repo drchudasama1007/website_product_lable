@@ -1,0 +1,38 @@
+.te_ribbon-wrapper .label_div {
+    padding: 0 4px 0 8px;
+    position: absolute;
+    top: 20px;
+    left: -8px;
+    background: rgba(165, 128, 109, 0.7);
+    z-index: 1;
+}
+
+
+.te_ribbon-wrapper .label_div .te_before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0px;
+    height: 0;
+    width: 0;
+    border-bottom: 7px solid rgba(165, 128, 109, 0.8);
+    border-left: 9px solid transparent;
+}
+
+.te_ribbon-wrapper .label_div .te_label_name {
+    font-size: 0.75rem;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.te_ribbon-wrapper .label_div .te_after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    height: 0;
+    width: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-left: 10px solid rgba(165, 128, 109, 0.7);
+}

@@ -1,0 +1,30 @@
+<odoo>
+
+    <template id="website_products_label" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('ribbon-wrapper')]" position="replace">
+             <t t-if="product.product_label_id">
+            <div class="te_ribbon-wrapper" t-attf-style="color:#{product.product_label_id.font_color}">
+
+            <div class="label_div"
+                 t-attf-style="background-color:#{product.product_label_id.bg_color}B3">
+                <span class="te_before"
+                      t-attf-style="border-bottom-color:#{product.product_label_id.bg_color}CC"/>
+                <div class="p-1 te_label_name te_label_name" t-field="product.product_label_id.name"/>
+                <t t-if="request.env['res.lang'].search([('code', '=', request.env.lang)]).direction == 'rtl'">
+                    <span class="te_after"
+                      t-attf-style="border-right-color:#{product.product_label_id.bg_color}B3"/>
+                </t>
+                <t t-else="">
+                <span class="te_after"
+                      t-attf-style="border-left-color:#{product.product_label_id.bg_color}B3"/>
+                </t>
+            </div>
+
+
+
+        </div>
+             </t>
+        </xpath>
+    </template>
+
+</odoo>

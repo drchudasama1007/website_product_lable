@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="product_label_form_view" model="ir.ui.view">
+           <field name="name">product.label.form.view</field>
+           <field name="model">product.label</field>
+           <field name="arch" type="xml">
+               <form string="Product Label">
+                   <sheet>
+                       <group>
+                           <field name="name"/>
+                           <field name="bg_color" widget="color"/>
+                           <field name="font_color" widget="color"/>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="product_template_inherit_form_view" model="ir.ui.view">
+            <field name="name">product.template.inherit.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='website_style_ids']" position="after">
+                    <field name="product_label_id"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
